@@ -13,7 +13,7 @@ var Review = Backbone.Model.extend(
 	}
 });
 
-var Reviews = Backbone.Collection.extend(
+var ReviewsCollection = Backbone.Collection.extend(
 {
 	model: Review
 });
