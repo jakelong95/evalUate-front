@@ -1,3 +1,13 @@
+var app = "http://evaluate-app.herokuapp.com";
+
+$(document).ready(function()
+{
+	$.get(app + "/department", function(data)
+	{
+		$("#departmens_sidebar").html(data);
+	});
+});
+
 var reviews = new ReviewsCollection();
 var r1 = new Review({message:"This is a message",class_id:"Class 101",workload:"Easy",helpfulness:100});
 var r2 = new Review({message:"This is another message",class_id:"Class 102",workload:"Hard",helpfulness:1});
@@ -21,5 +31,4 @@ var ReviewsView = Backbone.View.extend(
 	}
 });
 
-console.log(reviews);
 var view = new ReviewsView({reviews: reviews});
