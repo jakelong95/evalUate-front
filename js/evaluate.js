@@ -15,10 +15,11 @@ var ReviewsView = Backbone.View.extend(
 	},
 	render: function()
 	{
-		this.$el.append(this.template({reviews: reviews}));
+		this.$el.append(this.template({reviews: this.reviews}));
 		
 		return this;
 	}
 });
 
+console.log(reviews);
 var view = new ReviewsView({reviews: reviews});

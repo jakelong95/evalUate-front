@@ -10,8 +10,8 @@
 	</div>
 	
 	<script id="review-template" type="text/template" class="template">
-		<h2 style="margin:auto">Reviews for <%- reviews.get(0).get("class_id") %></h2>
-		<% _.each(reviews, function(review){ %>
+		<h2 style="margin:auto">Reviews for <%- reviews.models[0].get("class_id") %></h2>
+		<% _.each(reviews.models, function(review){ %>
 			<div class="review_div">
 				<h3 class="review_header">Workload:</h3><%- review.get("workload") %>
 				<h3 class="review_header">Message:</h3>
