@@ -6,27 +6,19 @@ reviews.add(r2);
 
 var ReviewsView = Backbone.View.extend(
 {
-	el: "#reviews-table-body",
-	initialize: function()
+	el: $("#reviews"),
+	template: _.template(document.getElementById("review-template").textContent),
+	initialize: function(options)
 	{
+		this.reviews = options.reviews;
 		this.render();
 	},
 	render: function()
 	{
-		reviews.each(function(review)
-		{
-			this.$(this.el).append(
-				"<tr>" +
-					"<td>" + review.get("class_id") + "</td>" +
-					"<td>" + review.get("workload") + "</td>" +
-					"<td>" + review.get("message") + "</td>" +
-					"<td>" + review.get("helpfulness") + "</td>" +
-				"</tr>"
-			);
-		});
+		this.$el.append(this.template({reviews: reviews}));
 		
 		return this;
 	}
 });
 
-var view = new ReviewsView();
+var view = new ReviewsView({reviews: reviews});
