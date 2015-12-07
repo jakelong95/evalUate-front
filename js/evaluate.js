@@ -2,9 +2,13 @@ var app = "http://evaluate-app.herokuapp.com";
 
 $(document).ready(function()
 {
+	//Get the department listings
 	$.get(app + "/department", function(data)
 	{
-		$("#departmens_sidebar").html(data);
+		for(var id in data)
+		{
+			$("#departments_sidebar").append("<div class='department_listing'>" + data[id].title + "</div><br/>");
+		}
 	});
 });
 

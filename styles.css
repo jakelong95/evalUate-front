@@ -7,6 +7,15 @@ div.review_div
 	padding-left: 20px;
 }
 
+div.department_listing
+{
+	background:#105088;
+	border-radius:20px;
+	width:20%;
+	padding-left:20px;
+	padding-right:20px;
+}
+
 h3.review_header
 {
 	margin-top: 2px;
