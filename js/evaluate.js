@@ -5,10 +5,13 @@ $(document).ready(function()
 	//Get the department listings
 	$.get(app + "/department", function(data)
 	{
+		var depts = [];
 		for(var id in data)
 		{
-			$("#departments_sidebar").append("<div class='department_listing'>" + data[id].title + "</div><br/>");
+			depts.push(data[id].title);
 		}
+
+		var deptsView = new DepartmentListingView({depts: depts});
 	});
 });
 
@@ -18,21 +21,4 @@ var r2 = new Review({message:"This is another message",class_id:"Class 102",work
 reviews.add(r1);
 reviews.add(r2);
 
-var ReviewsView = Backbone.View.extend(
-{
-	el: $("#reviews"),
-	template: _.template(document.getElementById("review-template").textContent),
-	initialize: function(options)
-	{
-		this.reviews = options.reviews;
-		this.render();
-	},
-	render: function()
-	{
-		this.$el.append(this.template({reviews: this.reviews}));
-		
-		return this;
-	}
-});
-
-var view = new ReviewsView({reviews: reviews});
+//var view = new ReviewsView({reviews: reviews});

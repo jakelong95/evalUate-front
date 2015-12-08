@@ -9,11 +9,12 @@ div.review_div
 
 div.department_listing
 {
-	background:#105088;
+	background:#880000;
 	border-radius:20px;
 	width:20%;
 	padding-left:20px;
 	padding-right:20px;
+	margin-top:5px;
 }
 
 h3.review_header
