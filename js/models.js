@@ -5,11 +5,12 @@ var Review = Backbone.Model.extend(
 		message: "",
 		class_id: "",
 		workload: "",
-		helpfulness: 0
+		helpfulness: 0,
+		createdAt:""
 	},
-	initialize: function()
+	initialize: function(data)
 	{
-		
+		this.createdAt = (new Date(data.createdAt)).toDateString();
 	}
 });
 
