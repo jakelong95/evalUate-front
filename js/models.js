@@ -1,5 +1,4 @@
-var Review = Backbone.Model.extend(
-{
+var Review = Backbone.Model.extend({
 	defaults:
 	{
 		message: "",
@@ -14,7 +13,16 @@ var Review = Backbone.Model.extend(
 	}
 });
 
-var ReviewsCollection = Backbone.Collection.extend(
-{
+var Class = Backbone.Model.extend({
+	initialize: function(data){
+		this.set(data);
+	}
+});
+
+var ReviewsCollection = Backbone.Collection.extend({
 	model: Review
+});
+
+var ClassCollection = Backbone.Collection.extend({
+	model: Class
 });
